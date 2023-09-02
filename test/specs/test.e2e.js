@@ -1,24 +1,18 @@
 import { expect, browser, $ } from '@wdio/globals'
 
 describe('Inventory Page', () => {
-    it('Verify elements are displayed on the page', async () => {
-        await browser.url(`https://www.saucedemo.com/`)
-
+    beforeEach( async () => {
+        await browser.url(``)
         await $('#user-name').setValue('standard_user')
         await $('#password').setValue('secret_sauce')
         await $('#login-button').click()
-
+    });
+    it('Verify elements are displayed on the page', async () => {
         await expect($('.title')).toBeDisplayed()
         await expect($('.shopping_cart_link')).toBeDisplayed()
         await expect($('.inventory_list')).toHaveChildren({ gte: 2 })
     });
     it('Verify no products are available in the Shopping Cart', async () => {
-        await browser.url(`https://www.saucedemo.com/`)
-
-        await $('#user-name').setValue('standard_user')
-        await $('#password').setValue('secret_sauce')
-        await $('#login-button').click()
-
         await $('#add-to-cart-sauce-labs-backpack').click()
         await expect($('.shopping_cart_badge')).toHaveText('1')
 

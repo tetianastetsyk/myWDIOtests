@@ -85,7 +85,7 @@ export const config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: 'https://www.saucedemo.com/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -125,7 +125,7 @@ export const config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec','html-nice'],
 
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
